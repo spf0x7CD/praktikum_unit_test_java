@@ -16,8 +16,6 @@ import static org.junit.Assert.assertThrows;
 public class CatTest {
     @Mock
     Feline feline;
-    @Mock
-    Predator predator;
     private Cat cat;
 
     @Before
@@ -29,11 +27,11 @@ public class CatTest {
     public void getSoundTest() {
         String actual = cat.getSound();
         String expected = "Мяу";
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
     @Test
     public void getFoodShouldReturnFoodListTest() throws Exception {
-        Mockito.when(predator.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> actual = cat.getFood();
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         assertEquals(expected, actual);

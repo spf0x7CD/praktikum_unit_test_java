@@ -39,11 +39,6 @@ public class LionParametrizedTest {
     }
 
     @Test
-    public void shouldCreateLionObjectWithMaleOrFemaleSexValueTest() {
-        assertNotNull(lion);
-    }
-
-    @Test
     public void doesHaveManeShouldCorrespondSexValueTest() {
         boolean actual = lion.doesHaveMane();
         assertEquals(hasManeExpected, actual);
@@ -62,12 +57,5 @@ public class LionParametrizedTest {
         Mockito.when(feline.getFood(Mockito.anyString())).thenReturn(foodList);
         List<String> actualList = lion.getFood();
         assertEquals(foodList, actualList);
-    }
-
-    @Test
-    public void testEatMeatShouldReturnFoodList() throws Exception {
-        Mockito.when(feline.getFood(Mockito.anyString())).thenReturn(foodList);
-        List<String> actual = lion.getFood();
-        assertEquals(foodList, actual);
     }
 }

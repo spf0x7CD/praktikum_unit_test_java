@@ -1,14 +1,15 @@
 package com.example;
 
 import org.junit.Test;
-import org.mockito.Mockito;
+import org.mockito.Mock;
 
 import static org.junit.Assert.*;
 
 public class LionTest {
-    Feline feline = Mockito.mock(Feline.class); // Через аннотацию @Mock падает тест shouldReturn1KittenValueTest() c NPЕ, если есть объяснение буду рад услышать
+    @Mock
+    Feline feline;
     @Test
     public void shouldThrowExceptionWithNotMaleOrFemaleSexValueTest() {
-        assertThrows(Exception.class, () -> new Lion(feline, Mockito.anyString()));
+        assertThrows(Exception.class, () -> new Lion(feline, "AH-50"));
     }
 }

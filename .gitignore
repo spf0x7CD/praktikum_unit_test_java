@@ -5,7 +5,8 @@
 *.log
 
 /.idea
-target
+target/*
+!site
 
 # BlueJ files
 *.ctxt
